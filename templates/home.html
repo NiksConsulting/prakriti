@@ -1,13 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link href="/static/main.css" rel="stylesheet" media="Custom css"/>
-    <link href="/static/main.js" rel="script" media="Custom Js"/>
-    <title>Home</title>
-</head>
-<body>
+{% extends "base.html" %}
 
-
-</body>
-</html>
+{% block content %}
+    <div class="flex flex-row items-center justify-center bg-gray-100 px-4 sm:flex-row sm:space-x-6 sm:space-y-0 mt-5">
+        <div class="w-full max-w-sm overflow-hidden rounded-lg bg-white shadow-md duration-300 hover:scale-105 hover:shadow-xl" style="margin-right: 50px;">
+          <img src="/static/prakriti/1.png"/>
+          <div class="space-x-4 bg-gray-100 py-4 text-center">
+            <button class="inline-block rounded-md bg-green-500 px-6 py-2 font-semibold text-green-100 shadow-md duration-75 hover:bg-green-400">Enter</button>
+          </div>
+        </div>
+        <div class="w-full max-w-sm overflow-hidden rounded-lg bg-white shadow-md duration-300 hover:scale-105 hover:shadow-xl" style="margin-left: 50px;">
+          <img src="/static/prakriti/2.png"/>
+          <div class="space-x-4 bg-gray-100 py-4 text-center">
+            <button class="inline-block rounded-md bg-green-500 px-6 py-2 font-semibold text-green-100 shadow-md duration-75 hover:bg-green-400">Enter</button>
+          </div>
+        </div>
+</div>
+{% endblock %}

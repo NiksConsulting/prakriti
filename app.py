@@ -1,12 +1,23 @@
-from flask import Flask
+from flask import Flask, redirect, url_for, render_template
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)
 
 
 @app.route('/')
-def hello_world():  # put application's code here
-    return 'Hello World!'
+def home():  # put application's code here
+    return render_template('home.html')
 
+
+@app.route('/about')
+def about():  # put application's code here
+    return render_template('about.html')
+
+
+@app.route('/contact')
+def contact():  # put application's code here
+    return render_template('contact.html')
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)

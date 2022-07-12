@@ -1,10 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--Tailwind Css-->
+    <link href="https://unpkg.com/@material-tailwind/html@latest/styles/material-tailwind.css" rel="stylesheet"/>
+    <!--Google Font -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+    <!--FontAwesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous"/>
+    <!--Custom CSS/JS-->
+    <link href="/static/main.css" rel="stylesheet" media="Custom css"/>
+    <link href="/static/main.js" rel="script" media="Custom Js"/>
+    <title>Prakriti app| Your holistic avatar generator</title>
 </head>
 <body>
-$END$
+<header>
+    <div class="p-header h-100">
+        <nav class="navbar w-full bg-white">
+            <div class="container-lg px-0">
+                <div class="flex w-full items-center">
+                <a class="nav-brand mr-auto ml-0" href="#"><img src="/static/logo.png" height="40px" width="140px"/></a>
+                <button
+                    navbar-trigger=""
+                    class="navbar-trigger hidden ml-auto mr-0 mb-0 xs:visible sm:visible"
+                    type="button"
+                    aria-controls="navigation"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                >
+                    <span class="navbar-trigger-icon">
+                    <span bar1="" class="navbar-trigger-bar mt-1"
+                        ><span class="hidden origin-[10%_10%] rotate-45"></span
+                    ></span>
+                    <span bar2="" class="bar2 navbar-trigger-bar mt-2"></span>
+                    <span bar3="" class="bar3 navbar-trigger-bar mt-2"
+                        ><span
+                        class="mt-mt-[0.4375rem] hidden origin-[10%_90%] -rotate-45"
+                        ></span
+                    ></span>
+                    </span>
+                </button>
+                </div>
+                <div class="collapse navbar-collapse" navbar-menu="">
+                <ul class="navbar-nav">
+                    <li>
+                    <a class="nav-link" aria-current="page" href="/">
+                        <i class="fab fa fa-home mr-2 text-base opacity-60"></i>
+                        <span>Home</span>
+                    </a>
+                    </li>
+                    <li class="flex">
+                        <a class="nav-link" href="/about">
+                            <i class="material-icons mr-2 text-base opacity-60"></i>
+                            <span>About-us</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="/contact">
+                            <i class="fab fa fa-phone mr-2 text-base opacity-60"></i>
+                            <span>Contact</span>
+                        </a>
+                    </li>
+                </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+</header>
+
+{% block content %}
+
+{% endblock %}
+<footer>
+    <div class="w-full md:w-7/12 pt-5 px-4 mb-8 mx-auto text-center">
+        © Copyright 2022 All right reserved <a href="#" class="text-gray-700 font-semibold" target="_blank">Prakriti</a>.
+    </div>
+    <!-- Tailwind -->
+    <script src="https://unpkg.com/@material-tailwind/html@latest/scripts/collapse.js"></script>
+</footer>
 </body>
+
 </html>
