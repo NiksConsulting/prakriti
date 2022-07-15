@@ -10,6 +10,11 @@ def home():  # put application's code here
     return render_template('home.html')
 
 
+@app.route('/avatar')
+def avatar():  # put application's code here
+    return render_template('avatar.html')
+
+
 @app.route('/about')
 def about():  # put application's code here
     return render_template('about.html')
@@ -18,6 +23,7 @@ def about():  # put application's code here
 @app.route('/contact')
 def contact():  # put application's code here
     return render_template('contact.html')
+
 
 if __name__ == '__main__':
     app.run(debug=True)

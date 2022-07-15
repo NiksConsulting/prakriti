@@ -9,3 +9,19 @@
 .ml50{
     margin-left: 50px;
 }
+
+.skin{
+    cursor: pointer;
+    display: block;
+    width: 108px;
+    height: 108px;
+    margin: 5px;
+    background-size: cover;
+}
+.skins .yellow{
+    background-image: url(/static/img/skins/yellow.svg);
+}
+
+.skins .black{
+
+}
