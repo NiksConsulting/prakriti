@@ -8,7 +8,7 @@ Prakriti is an online avatar generator
 
 * Home Page
 
-![](static/screenshoots/Prakriti-app-Your-holistic-avatar-generator.png)
+![](static/screenshoots/Prakriti-app-HomePage.png)
 
 * Start Customize .svg file with [Gravit.io](https://designer.gravit.io/)
 

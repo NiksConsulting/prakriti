@@ -8,6 +8,11 @@
                 <button id="Randomize" name="button"  type="button" class="inline-block p-4 rounded-t-lg border-b-2 text-blue-600 hover:text-blue-600 dark:text-blue-500 dark:hover:text-blue-500 border-blue-600 dark:border-blue-500">
                     <img src="/static/img/redo.svg" height="36" width="36" style="color: blue"/>
                 </button>
+                <a href="{{ url_for('download', filename='random.svg') }}">
+                    <button id="Download" name="button"  type="button" class="inline-block p-4 rounded-t-lg border-b-2 text-blue-600 hover:text-blue-600 dark:text-blue-500 dark:hover:text-blue-500 border-blue-600 dark:border-blue-500">
+                        <img src="/static/img/download.svg" height="26" width="26" style="color: blue"/>
+                    </button>
+                </a>
             </div>
         </div>
         <div class="flex-initial w-75">
