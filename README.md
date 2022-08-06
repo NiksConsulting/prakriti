@@ -18,8 +18,8 @@ Prakriti is an online avatar generator
 
 ![](static/screenshoots/Avatar.png)
 
-* Random Avatar (Completed)
+* Generate Random Avatar (Completed)
 
 ![](static/screenshoots/Prakriti-app-Your-holistic-avatar-generator.gif)
 
-* Avatar with select Parameter (in progress)
+* Generate Avatar with selected parameters (in progress)
