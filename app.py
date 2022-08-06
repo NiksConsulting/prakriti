@@ -3,7 +3,7 @@ from pathlib import Path
 from flask_cors import CORS
 import python_avatars as pa
 
-BASE_DIR = Path(__file__).resolve()
+BASE_DIR = Path(__file__).resolve().parent
 
 app = Flask(__name__)
 CORS(app)
@@ -19,7 +19,7 @@ def home():
 def avatar():
     randomize = pa.Avatar.random()
     # put application's code here
-    randomize.render(self="random.svg", path=BASE_DIR / 'static' / 'img' / 'random')
+    randomize.render(path=BASE_DIR / 'static' / 'img' / 'random' / 'random.svg')
     return render_template('avatar.html')
 
 

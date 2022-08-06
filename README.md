@@ -10,10 +10,16 @@ Prakriti is an online avatar generator
 
 ![](static/screenshoots/Prakriti-app-Your-holistic-avatar-generator.png)
 
-* Avatar Boy Page(In Progress)
-
-![](static/screenshoots/start-avatar.jpeg)
-
 * Start Customize .svg file with [Gravit.io](https://designer.gravit.io/)
 
 ![](static/screenshoots/gravit.io.jpg)
+
+* Avatar Boy Page(Completed)
+
+![](static/screenshoots/Avatar.png)
+
+* Random Avatar (Completed)
+
+![](static/screenshoots/Prakriti-app-Your-holistic-avatar-generator.gif)
+
+* Avatar with select Parameter (in progress)

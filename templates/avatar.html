@@ -4,7 +4,7 @@
     <div class="flex flex-row items-center justify-center bg-gray-100 px-4 sm:flex-row sm:space-x-6 sm:space-y-0 mt-5">
         <div class="flex-none w-25">
             <div class="px-8 mb-4">
-               <img src="/my_avatar.svg" height="280" width="264">
+               <img id = "randomAvatar" src="/static/img/random/random.svg" height="380" width="364">
                 <button id="Randomize" name="button"  type="button" class="inline-block p-4 rounded-t-lg border-b-2 text-blue-600 hover:text-blue-600 dark:text-blue-500 dark:hover:text-blue-500 border-blue-600 dark:border-blue-500">
                     <img src="/static/img/redo.svg" height="36" width="36" style="color: blue"/>
                 </button>
@@ -265,14 +265,14 @@
                   return false;
               }
               httpRequest.onreadystatechange = generateRandomAvatar;
+              window.location.reload();
               httpRequest.open('GET', '/avatar');
               httpRequest.send();
           }
-
           function generateRandomAvatar() {
               if (httpRequest.readyState === XMLHttpRequest.DONE) {
                   if (httpRequest.status === 200) {
-                      alert('Request Send!');
+                      //alert('Request Send!');
                   } else {
                       alert('There was a problem with the request.');
                   }
