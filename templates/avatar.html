@@ -4,9 +4,9 @@
     <div class="flex flex-row items-center justify-center bg-gray-100 px-4 sm:flex-row sm:space-x-6 sm:space-y-0 mt-5">
         <div class="flex-none w-25">
             <div class="px-8 mb-4">
-               <img id = "randomAvatar" src="/static/img/random/random.svg" height="380" width="364">
+               <img id = "randomAvatar" src="{{ url_for('static', filename='/img/random/random.svg') }}" height="380" width="364">
                 <button id="Randomize" name="button"  type="button" class="inline-block p-4 rounded-t-lg border-b-2 text-blue-600 hover:text-blue-600 dark:text-blue-500 dark:hover:text-blue-500 border-blue-600 dark:border-blue-500">
-                    <img src="/static/img/redo.svg" height="36" width="36" style="color: blue"/>
+                    <img src="{{ url_for('static', filename='/img/redo.svg') }}" height="36" width="36" style="color: blue"/>
                 </button>
                 <a href="{{ url_for('download', filename='random.svg') }}">
                     <button id="Download" name="button"  type="button" class="inline-block p-4 rounded-t-lg border-b-2 text-blue-600 hover:text-blue-600 dark:text-blue-500 dark:hover:text-blue-500 border-blue-600 dark:border-blue-500">
@@ -41,212 +41,212 @@
                 </div>
                 <div id="myTabContent">
                     <div class="flex flex-wrap p-4 bg-gray-50 rounded-lg dark:bg-gray-800 skins" id="skin" role="tabpanel" aria-labelledby="skin-tab">
-                        <a class="skin pale" href="" data-call=""><?xml version="1.0" standalone="no"?>
+                        <a href="#" class="skin" id="ffdbb4"  data-id="pale" onClick="genAvatarSkin(this.id);"  data-call=""><?xml version="1.0" standalone="no"?>
                             <img src="/static/img/skins/pale.svg" alt="Pale" height="108px" width="108px" />
                         </a>
-                        <a class="skin yellow" href="" data-call=""><?xml version="1.0" standalone="no"?>
+                        <a  href="#" class="skin" id="f8d25c" data-id="yellow"  onClick="genAvatarSkin(this.id)" data-call=""><?xml version="1.0" standalone="no"?>
                             <img src="/static/img/skins/yellow.svg" alt="Yellow" height="108px" width="108px" />
                         </a>
-                        <a class="skin tanned" href="" data-call=""><?xml version="1.0" standalone="no"?>
+                        <a  href="#" class="skin" id="fd9841" data-id="tanned"  onClick="genAvatarSkin(this.id)"  data-call=""><?xml version="1.0" standalone="no"?>
                             <img src="/static/img/skins/tanned.svg" alt="Tanned" height="108px" width="108px" />
                         </a>
-                        <a class="skin light" href="" data-call=""><?xml version="1.0" standalone="no"?>
+                        <a href="#" class="skin" id="edb98a" data-id="light"  onClick="genAvatarSkin(this.id)"  data-call=""><?xml version="1.0" standalone="no"?>
                             <img src="/static/img/skins/light.svg" alt="Light" height="108px" width="108px" />
                         </a>
-                        <a class="skin brown" href="" data-call=""><?xml version="1.0" standalone="no"?>
+                        <a href="#" class="skin" id="d08b5b" data-id="brown" onClick="genAvatarSkin(this.id)" data-call=""><?xml version="1.0" standalone="no"?>
                             <img src="/static/img/skins/brown.svg" alt="Brown" height="108px" width="108px" />
                         </a>
-                        <a class="skin darkbrown" href="" data-call=""><?xml version="1.0" standalone="no"?>
+                        <a href="#" class="skin" id="ae5d29" data-id="darkbrown" onClick="genAvatarSkin(this.id)"  data-call=""><?xml version="1.0" standalone="no"?>
                             <img src="/static/img/skins/darkbrown.svg" alt="Darkbrown" height="108px" width="108px" />
                         </a>
-                        <a class="skin black" href="" data-call=""><?xml version="1.0" standalone="no"?>
+                        <a href="#" class="skin" id="614335" data-id="black" onClick="genAvatarSkin(this.id)" data-call=""><?xml version="1.0" standalone="no"?>
                             <img src="/static/img/skins/black.svg" alt="Black" height="108px" width="108px" />
                         </a>
                     </div>
                     <div class="flex flex-wrap hidden p-4 bg-gray-50 rounded-lg dark:bg-gray-800" id="mouth" role="tabpanel" aria-labelledby="mouth-tab">
-                        <a class="mouth default pb-8 pr-8" href="" data-call=""><?xml version="1.0" standalone="no"?>
+                        <a class="mouth pb-8 pr-8" id="default"  data-id="default" onClick="genAvatarMouth(this.id);" href="#" data-call=""><?xml version="1.0" standalone="no"?>
                             <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"> Default</button>
                         </a>
-                        <a class="mouth Concerned pb-8 pr-8" href="" data-call=""><?xml version="1.0" standalone="no"?>
+                        <a class="mouth pb-8 pr-8" href="#" id="Concerned"  data-id="Concerned" onClick="genAvatarMouth(this.id);" data-call=""><?xml version="1.0" standalone="no"?>
                             <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded "> Concerned</button>
                         </a>
-                        <a class="mouth Disbelief pb-8 pr-8" href="" data-call=""><?xml version="1.0" standalone="no"?>
+                        <a class="mouth pb-8 pr-8" href="#" id="Disbelief"  data-id="Disbelief" onClick="genAvatarMouth(this.id);" data-call=""><?xml version="1.0" standalone="no"?>
                             <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded "> Disbelief</button>
                         </a>
-                        <a class="mouth Eating pb-8 pr-8" href="" data-call=""><?xml version="1.0" standalone="no"?>
+                        <a class="mouth pb-8 pr-8" href="#" id="Eating"  data-id="Eating" onClick="genAvatarMouth(this.id);" data-call=""><?xml version="1.0" standalone="no"?>
                             <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded "> Eating</button>
                         </a>
-                        <a class="mouth Grimace pb-8 pr-8" href="" data-call=""><?xml version="1.0" standalone="no"?>
+                        <a class="mouth  pb-8 pr-8" href="#" id="Grimace"  data-id="Grimace" onClick="genAvatarMouth(this.id);" data-call=""><?xml version="1.0" standalone="no"?>
                             <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"> Grimace</button>
                         </a>
-                        <a class="mouth Sad pb-8 pr-8" href="" data-call=""><?xml version="1.0" standalone="no"?>
+                        <a class="mouth pb-8 pr-8" href="#" id="Sad"  data-id="Sad" onClick="genAvatarMouth(this.id);" data-call=""><?xml version="1.0" standalone="no"?>
                             <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"> Sad</button>
                         </a>
-                        <a class="mouth ScreamOpen pb-8 pr-8" href="" data-call=""><?xml version="1.0" standalone="no"?>
+                        <a class="mouth pb-8 pr-8" href="#" id="Scream_Open"  data-id="Scream_Open" onClick="genAvatarMouth(this.id);" data-call=""><?xml version="1.0" standalone="no"?>
                             <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"> ScreamOpen</button>
                         </a>
-                        <a class="mouth Serious pb-8 pr-8" href="" data-call=""><?xml version="1.0" standalone="no"?>
+                        <a class="mouth pb-8 pr-8" href="#" id="Serious"  data-id="Serious" onClick="genAvatarMouth(this.id);" data-call=""><?xml version="1.0" standalone="no"?>
                             <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"> Serious</button>
                         </a>
-                        <a class="mouth Smile pb-8 pr-8" href="" data-call=""><?xml version="1.0" standalone="no"?>
+                        <a class="mouth pb-8 pr-8" href="#" id="Smile"  data-id="Smile" onClick="genAvatarMouth(this.id);" data-call=""><?xml version="1.0" standalone="no"?>
                             <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"> Smile</button>
                         </a>
-                        <a class="mouth Tongue pb-8 pr-8" href="" data-call=""><?xml version="1.0" standalone="no"?>
+                        <a class="mouth pb-8 pr-8" href="#" id="Tongue"  data-id="Tongue" onClick="genAvatarMouth(this.id);" data-call=""><?xml version="1.0" standalone="no"?>
                             <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"> Tongue</button>
                         </a>
-                        <a class="mouth Twinkle pb-8 pr-8" href="" data-call=""><?xml version="1.0" standalone="no"?>
+                        <a class="mouth pb-8 pr-8" href="#" id="Twinkle"  data-id="Twinkle" onClick="genAvatarMouth(this.id);" data-call=""><?xml version="1.0" standalone="no"?>
                             <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"> Twinkle</button>
                         </a>
-                        <a class="mouth Vomit pb-8 pr-8" href="" data-call=""><?xml version="1.0" standalone="no"?>
+                        <a class="mouth pb-8 pr-8" href="#" id="Vomit"  data-id="Vomit" onClick="genAvatarMouth(this.id);" data-call=""><?xml version="1.0" standalone="no"?>
                             <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"> Vomit</button>
                         </a>
                     </div>
                     <div class="flex flex-wrap p-4 bg-gray-50 rounded-lg dark:bg-gray-800" id="eye" role="tabpanel" aria-labelledby="eye-tab">
-                        <a class="eye default pb-8 pr-8" href="" data-call=""><?xml version="1.0" standalone="no"?>
+                        <a class="eye default pb-8 pr-8" href="#" data-call=""><?xml version="1.0" standalone="no"?>
                             <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"> Default</button>
                         </a>
-                        <a class="eye Concerned pb-8 pr-8" href="" data-call=""><?xml version="1.0" standalone="no"?>
+                        <a class="eye Concerned pb-8 pr-8" href="#" data-call=""><?xml version="1.0" standalone="no"?>
                             <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded "> Close</button>
                         </a>
-                        <a class="eye Disbelief pb-8 pr-8" href="" data-call=""><?xml version="1.0" standalone="no"?>
+                        <a class="eye Disbelief pb-8 pr-8" href="#" data-call=""><?xml version="1.0" standalone="no"?>
                             <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded "> Cry</button>
                         </a>
-                        <a class="eye Eating pb-8 pr-8" href="" data-call=""><?xml version="1.0" standalone="no"?>
+                        <a class="eye Eating pb-8 pr-8" href="#" data-call=""><?xml version="1.0" standalone="no"?>
                             <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded "> Dizzy</button>
                         </a>
-                        <a class="eye Grimace pb-8 pr-8" href="" data-call=""><?xml version="1.0" standalone="no"?>
+                        <a class="eye Grimace pb-8 pr-8" href="#" data-call=""><?xml version="1.0" standalone="no"?>
                             <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"> EyeRoll</button>
                         </a>
-                        <a class="eye Sad pb-8 pr-8" href="" data-call=""><?xml version="1.0" standalone="no"?>
+                        <a class="eye Sad pb-8 pr-8" href="#" data-call=""><?xml version="1.0" standalone="no"?>
                             <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"> Happy</button>
                         </a>
-                        <a class="eye ScreamOpen pb-8 pr-8" href="" data-call=""><?xml version="1.0" standalone="no"?>
+                        <a class="eye ScreamOpen pb-8 pr-8" href="#" data-call=""><?xml version="1.0" standalone="no"?>
                             <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"> Hearts</button>
                         </a>
-                        <a class="eye Serious pb-8 pr-8" href="" data-call=""><?xml version="1.0" standalone="no"?>
+                        <a class="eye Serious pb-8 pr-8" href="#" data-call=""><?xml version="1.0" standalone="no"?>
                             <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"> Side</button>
                         </a>
-                        <a class="eye Smile pb-8 pr-8" href="" data-call=""><?xml version="1.0" standalone="no"?>
+                        <a class="eye Smile pb-8 pr-8" href="#" data-call=""><?xml version="1.0" standalone="no"?>
                             <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"> Squint</button>
                         </a>
-                        <a class="eye Tongue pb-8 pr-8" href="" data-call=""><?xml version="1.0" standalone="no"?>
+                        <a class="eye Tongue pb-8 pr-8" href="#" data-call=""><?xml version="1.0" standalone="no"?>
                             <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"> Surprised</button>
                         </a>
-                        <a class="eye Twinkle pb-8 pr-8" href="" data-call=""><?xml version="1.0" standalone="no"?>
+                        <a class="eye Twinkle pb-8 pr-8" href="#" data-call=""><?xml version="1.0" standalone="no"?>
                             <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"> Wink</button>
                         </a>
-                        <a class="eye Vomit pb-8 pr-8" href="" data-call=""><?xml version="1.0" standalone="no"?>
+                        <a class="eye Vomit pb-8 pr-8" href="#" data-call=""><?xml version="1.0" standalone="no"?>
                             <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"> WinkWacky</button>
                         </a>
                     </div>
                     <div class="flex flex-wrap p-4 bg-gray-50 rounded-lg dark:bg-gray-800" id="eyebrow" role="tabpanel" aria-labelledby="eyebrow-tab">
-                        <a class="eyebrow default pb-8 pr-8" href="" data-call=""><?xml version="1.0" standalone="no"?>
+                        <a class="eyebrow default pb-8 pr-8" href="#" data-call=""><?xml version="1.0" standalone="no"?>
                             <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"> Default</button>
                         </a>
-                        <a class="eyebrow Concerned pb-8 pr-8" href="" data-call=""><?xml version="1.0" standalone="no"?>
+                        <a class="eyebrow Concerned pb-8 pr-8" href="#" data-call=""><?xml version="1.0" standalone="no"?>
                             <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded "> Angry</button>
                         </a>
-                        <a class="eyebrow Disbelief pb-8 pr-8" href="" data-call=""><?xml version="1.0" standalone="no"?>
+                        <a class="eyebrow Disbelief pb-8 pr-8" href="#" data-call=""><?xml version="1.0" standalone="no"?>
                             <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded "> AngryNatural</button>
                         </a>
-                        <a class="eyebrow Eating pb-8 pr-8" href="" data-call=""><?xml version="1.0" standalone="no"?>
+                        <a class="eyebrow Eating pb-8 pr-8" href="#" data-call=""><?xml version="1.0" standalone="no"?>
                             <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded "> DefaultNatural</button>
                         </a>
-                        <a class="eyebrow Grimace pb-8 pr-8" href="" data-call=""><?xml version="1.0" standalone="no"?>
+                        <a class="eyebrow Grimace pb-8 pr-8" href="#" data-call=""><?xml version="1.0" standalone="no"?>
                             <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"> FlatNatural</button>
                         </a>
-                        <a class="eyebrow Sad pb-8 pr-8" href="" data-call=""><?xml version="1.0" standalone="no"?>
+                        <a class="eyebrow Sad pb-8 pr-8" href="#" data-call=""><?xml version="1.0" standalone="no"?>
                             <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"> RaisedExcited</button>
                         </a>
-                        <a class="eyebrow ScreamOpen pb-8 pr-8" href="" data-call=""><?xml version="1.0" standalone="no"?>
+                        <a class="eyebrow ScreamOpen pb-8 pr-8" href="#" data-call=""><?xml version="1.0" standalone="no"?>
                             <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"> RaisedExcitedNatural</button>
                         </a>
-                        <a class="eyebrow Serious pb-8 pr-8" href="" data-call=""><?xml version="1.0" standalone="no"?>
+                        <a class="eyebrow Serious pb-8 pr-8" href="#" data-call=""><?xml version="1.0" standalone="no"?>
                             <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"> SadConcerned</button>
                         </a>
-                        <a class="eyebrow Smile pb-8 pr-8" href="" data-call=""><?xml version="1.0" standalone="no"?>
+                        <a class="eyebrow Smile pb-8 pr-8" href="#" data-call=""><?xml version="1.0" standalone="no"?>
                             <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"> SadConcernedNatural</button>
                         </a>
-                        <a class="eyebrow Tongue pb-8 pr-8" href="" data-call=""><?xml version="1.0" standalone="no"?>
+                        <a class="eyebrow Tongue pb-8 pr-8" href="#" data-call=""><?xml version="1.0" standalone="no"?>
                             <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"> UnibrowNatural</button>
                         </a>
-                        <a class="eyebrow Twinkle pb-8 pr-8" href="" data-call=""><?xml version="1.0" standalone="no"?>
+                        <a class="eyebrow Twinkle pb-8 pr-8" href="#" data-call=""><?xml version="1.0" standalone="no"?>
                             <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"> UpDown</button>
                         </a>
-                        <a class="eyebrow Vomit pb-8 pr-8" href="" data-call=""><?xml version="1.0" standalone="no"?>
+                        <a class="eyebrow Vomit pb-8 pr-8" href="#" data-call=""><?xml version="1.0" standalone="no"?>
                             <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"> UpDownNatural</button>
                         </a>
                     </div>
                     <div class="flex flex-wrap p-4 bg-gray-50 rounded-lg dark:bg-gray-800" id="clothes" role="tabpanel" aria-labelledby="clothes-tab">
-                        <a class="clothes default pb-8 pr-8" href="" data-call=""><?xml version="1.0" standalone="no"?>
+                        <a class="clothes default pb-8 pr-8" href="#" data-call=""><?xml version="1.0" standalone="no"?>
                             <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"> BlazerShirt</button>
                         </a>
-                        <a class="clothes Concerned pb-8 pr-8" href="" data-call=""><?xml version="1.0" standalone="no"?>
+                        <a class="clothes Concerned pb-8 pr-8" href="#" data-call=""><?xml version="1.0" standalone="no"?>
                             <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded "> BlazerSweater</button>
                         </a>
-                        <a class="clothes Disbelief pb-8 pr-8" href="" data-call=""><?xml version="1.0" standalone="no"?>
+                        <a class="clothes Disbelief pb-8 pr-8" href="#" data-call=""><?xml version="1.0" standalone="no"?>
                             <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded "> CollarSweater</button>
                         </a>
-                        <a class="clothes Eating pb-8 pr-8" href="" data-call=""><?xml version="1.0" standalone="no"?>
+                        <a class="clothes Eating pb-8 pr-8" href="#" data-call=""><?xml version="1.0" standalone="no"?>
                             <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded "> GraphicShirt</button>
                         </a>
-                        <a class="clothes Grimace pb-8 pr-8" href="" data-call=""><?xml version="1.0" standalone="no"?>
+                        <a class="clothes Grimace pb-8 pr-8" href="#" data-call=""><?xml version="1.0" standalone="no"?>
                             <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"> Hoodie</button>
                         </a>
-                        <a class="clothes Sad pb-8 pr-8" href="" data-call=""><?xml version="1.0" standalone="no"?>
+                        <a class="clothes Sad pb-8 pr-8" href="#" data-call=""><?xml version="1.0" standalone="no"?>
                             <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"> Overall</button>
                         </a>
-                        <a class="clothes ScreamOpen pb-8 pr-8" href="" data-call=""><?xml version="1.0" standalone="no"?>
+                        <a class="clothes ScreamOpen pb-8 pr-8" href="#" data-call=""><?xml version="1.0" standalone="no"?>
                             <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"> ShirtCrewNeck</button>
                         </a>
-                        <a class="clothes Serious pb-8 pr-8" href="" data-call=""><?xml version="1.0" standalone="no"?>
+                        <a class="clothes Serious pb-8 pr-8" href="#" data-call=""><?xml version="1.0" standalone="no"?>
                             <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"> ShirtScoopNeck</button>
                         </a>
-                        <a class="clothes Smile pb-8 pr-8" href="" data-call=""><?xml version="1.0" standalone="no"?>
+                        <a class="clothes Smile pb-8 pr-8" href="#" data-call=""><?xml version="1.0" standalone="no"?>
                             <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"> ShirtVNeck</button>
                         </a>
                     </div>
                     <div class="flex flex-wrap p-4 bg-gray-50 rounded-lg dark:bg-gray-800" id="hair" role="tabpanel" aria-labelledby="hair-tab">
-                        <a class="hair default pb-8 pr-8" href="" data-call=""><?xml version="1.0" standalone="no"?>
+                        <a class="hair default pb-8 pr-8" href="#" data-call=""><?xml version="1.0" standalone="no"?>
                             <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"> NoHair</button>
                         </a>
-                        <a class="hair Concerned pb-8 pr-8" href="" data-call=""><?xml version="1.0" standalone="no"?>
+                        <a class="hair Concerned pb-8 pr-8" href="#" data-call=""><?xml version="1.0" standalone="no"?>
                             <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded "> Hat</button>
                         </a>
-                        <a class="hair Disbelief pb-8 pr-8" href="" data-call=""><?xml version="1.0" standalone="no"?>
+                        <a class="hair Disbelief pb-8 pr-8" href="#" data-call=""><?xml version="1.0" standalone="no"?>
                             <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded "> Hijab</button>
                         </a>
-                        <a class="eye Eating pb-8 pr-8" href="" data-call=""><?xml version="1.0" standalone="no"?>
+                        <a class="eye Eating pb-8 pr-8" href="#" data-call=""><?xml version="1.0" standalone="no"?>
                             <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded "> LongHairBigHair</button>
                         </a>
-                        <a class="hair Grimace pb-8 pr-8" href="" data-call=""><?xml version="1.0" standalone="no"?>
+                        <a class="hair Grimace pb-8 pr-8" href="#" data-call=""><?xml version="1.0" standalone="no"?>
                             <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"> LongHairBob</button>
                         </a>
-                        <a class="hair Sad pb-8 pr-8" href="" data-call=""><?xml version="1.0" standalone="no"?>
+                        <a class="hair Sad pb-8 pr-8" href="#" data-call=""><?xml version="1.0" standalone="no"?>
                             <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"> LongHairBun</button>
                         </a>
-                        <a class="hair ScreamOpen pb-8 pr-8" href="" data-call=""><?xml version="1.0" standalone="no"?>
+                        <a class="hair ScreamOpen pb-8 pr-8" href="#" data-call=""><?xml version="1.0" standalone="no"?>
                             <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"> LongHairCurly</button>
                         </a>
-                        <a class="hair Serious pb-8 pr-8" href="" data-call=""><?xml version="1.0" standalone="no"?>
+                        <a class="hair Serious pb-8 pr-8" href="#" data-call=""><?xml version="1.0" standalone="no"?>
                             <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"> LongHairCurvy</button>
                         </a>
-                        <a class="hair Smile pb-8 pr-8" href="" data-call=""><?xml version="1.0" standalone="no"?>
+                        <a class="hair Smile pb-8 pr-8" href="#" data-call=""><?xml version="1.0" standalone="no"?>
                             <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"> LongHairDreads</button>
                         </a>
-                        <a class="hair Smile pb-8 pr-8" href="" data-call=""><?xml version="1.0" standalone="no"?>
+                        <a class="hair Smile pb-8 pr-8" href="#" data-call=""><?xml version="1.0" standalone="no"?>
                             <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"> LongHairFrida</button>
                         </a>
-                        <a class="hair Smile pb-8 pr-8" href="" data-call=""><?xml version="1.0" standalone="no"?>
+                        <a class="hair Smile pb-8 pr-8" href="#" data-call=""><?xml version="1.0" standalone="no"?>
                             <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"> LongHairFro</button>
                         </a>
-                        <a class="hair Smile pb-8 pr-8" href="" data-call=""><?xml version="1.0" standalone="no"?>
+                        <a class="hair Smile pb-8 pr-8" href="#" data-call=""><?xml version="1.0" standalone="no"?>
                             <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"> LongHairFroBand</button>
                         </a>
-                        <a class="hair Smile pb-8 pr-8" href="" data-call=""><?xml version="1.0" standalone="no"?>
+                        <a class="hair Smile pb-8 pr-8" href="#" data-call=""><?xml version="1.0" standalone="no"?>
                             <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"> LongHairNotTooLong</button>
                         </a>
-                        <a class="hair Smile pb-8 pr-8" href="" data-call=""><?xml version="1.0" standalone="no"?>
+                        <a class="hair Smile pb-8 pr-8" href="#" data-call=""><?xml version="1.0" standalone="no"?>
                             <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"> LongHairShavedSides</button>
                         </a>
                     </div>
@@ -259,43 +259,59 @@
 
 {% block scripts %}
   <script type="text/javascript">
-  (function() {
-          let httpRequest;
-          document.getElementById("Randomize").addEventListener('click', makeRequest);
+    (function() {
+      let httpRequest;
+      document.getElementById("Randomize").addEventListener('click', makeRequest);
 
-          function makeRequest() {
-              httpRequest = new XMLHttpRequest();
-              if (!httpRequest) {
-                  alert('Giving up :( Cannot create an XMLHTTP instance');
-                  return false;
-              }
-              httpRequest.onreadystatechange = generateRandomAvatar;
-              window.location.reload();
-              httpRequest.open('GET', '/avatar');
-              httpRequest.send();
+      function makeRequest() {
+          httpRequest = new XMLHttpRequest();
+          if (!httpRequest) {
+              alert('Giving up :( Cannot create an XMLHTTP instance');
+              return false;
           }
-          function generateRandomAvatar() {
-              if (httpRequest.readyState === XMLHttpRequest.DONE) {
-                  if (httpRequest.status === 200) {
-                      //alert('Request Send!');
-                  } else {
-                      alert('There was a problem with the request.');
-                  }
+          httpRequest.onreadystatechange = generateRandomAvatar;
+          window.location.reload();
+          httpRequest.open('GET', '/avatar');
+          httpRequest.send();
+      }
+      function generateRandomAvatar() {
+          if (httpRequest.readyState === XMLHttpRequest.DONE) {
+              if (httpRequest.status === 200) {
+                  //alert('Request Send!');
+              } else {
+                  alert('There was a problem with the request.');
               }
           }
       }
-  )();
+    }
+    )();
 
-  const base_url = "http://127.0.0.1:5000/avatar/"
-  $(".skin").on('click', function genAvatar(base_url = base_url) {
-        //?avatarStyle="Transparent"
-        //topType=LongHairFro
-        //var skin_val = document.attr('value');
-        const avatarStyleVal = "Transparent"
-        const topTypeVal = "LongHairFro"
-        const skinColorVal = "Brown"
-        //const base_url = "http://127.0.0.1:5000/avatar/"
-        window.location.href = base_url + "?avatarStyle="+avatarStyleVal+"&topType="+topTypeVal+"&skinColor="+skinColorVal+"";
-    });
+    $(".skin").on('click', function genAvatarSkin() {
+            var skin_val = this.id;
+            //alert(this.id);
+            //const base_url = "http://127.0.0.1:5000/avatar/"
+
+            if(window.location.href.indexOf("?") !== -1){
+                window.location.href = window.location.href+"&skinColor="+skin_val+""; //first
+            }else if (window.location.href.indexOf("skinColor=") !== -1){
+                // Modify or Replace value  of skinColor
+            }else{
+                window.location.href = window.location.href+"?skinColor="+skin_val+"";
+            }
+        });
+
+    $(".mouth").on('click', function genAvatarMouth() {
+            var mouth_val = this.id;
+            //alert(this.id);
+            //const base_url = "http://127.0.0.1:5000/avatar/"
+            if(window.location.href.indexOf("?") !== -1){
+                window.location.href = window.location.href+"&mouthType="+mouth_val+""; //first
+            }else if (window.location.href.indexOf("mouthType=") !== -1){
+                // Modify or Replace value  of skinColor
+            }else{
+                window.location.href = window.location.href+"?mouthType="+mouth_val+"";
+            }
+
+        });
   </script>
 {% endblock scripts %}

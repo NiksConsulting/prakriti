@@ -47,4 +47,12 @@ $('.skin').each(function () {
     var skin_val = $(this).attr('value');
     $(this).attr('src', src + '&showinfo=1&autohide=1');
 });
+
+
+function getSkinParam(identifier){
+        alert($(identifier).data('id'));
+        const skin = document.getElementById(identifier).getAttribute("data-id");
+        alert(skin);
+    };
+
  */
